@@ -1,5 +1,9 @@
 pipeline {
      agent any
+     environment{
+        NEW_VERSION == '1.3.0'
+        GITHUB_CREDENTIALS == 'credentials('githubSuri')
+     }
      stages {
         stage("build"){
            when {
@@ -24,6 +28,7 @@ pipeline {
          stage("deploy"){
             steps { 
               echo 'Deploying the application ............'
+               echo "Deploying with credentials ${GITHUB_CREDENTIALS}"
             }
          }
           stage("install"){
