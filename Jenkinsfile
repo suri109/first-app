@@ -30,7 +30,7 @@ pipeline {
               echo 'Deploying the application ............'
               echo "Deploying with credentials ${GITHUB_CREDENTIALS}"
                  withCredentials([
-                    usernamePassword(credentials: 'githubSuri' , usernameVariable: USER, passwordVariable: PWD) 
+                    usernamePassword(credentials: 'githubSuri' , usernameVariable: 'USER' passwordVariable: 'PWD')
                  ]){
                       echo "deploying with userName is ${USER}"
                  }
