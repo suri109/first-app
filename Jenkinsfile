@@ -28,7 +28,12 @@ pipeline {
          stage("deploy"){
             steps { 
               echo 'Deploying the application ............'
-               echo "Deploying with credentials ${GITHUB_CREDENTIALS}"
+              echo "Deploying with credentials ${GITHUB_CREDENTIALS}"
+                 withCredentials([
+                    usernamePassword(credentials: 'githubSuri' , usernameVariable: USER, passwordVariable: PWD) 
+                 ]){
+                      echo "deploying with userName is ${USER}"
+                 }
             }
          }
           stage("install"){
