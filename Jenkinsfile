@@ -4,7 +4,7 @@ pipeline {
         stage("build"){
            when {
                 expression{
-                     ${BRANCH_NAME} == 'main'
+                     ${env.BRANCH_NAME} == 'main' || ${env.Branch_NAME} == 'suri109-patch-1'
                 }
            }
            steps {
