@@ -29,7 +29,7 @@ pipeline {
             steps { 
               echo 'Deploying the application ............'
               echo "Deploying with credentials ${GITHUB_CREDENTIALS}"
-                 withCredentials([[$class: 'UsernamePasswordMultiBinding' , credentials: 'githubSuri' , usernameVariable: 'USER' , passwordVariable: 'PWD']
+                 withCredentials([[$class: 'UsernamePasswordMultiBinding' , credentialsId: 'githubSuri' , usernameVariable: 'USER' , passwordVariable: 'PWD']
                  ]){
                       echo "deploying with userName is ${USER}"
                  }
