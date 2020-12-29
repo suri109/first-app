@@ -12,6 +12,11 @@ pipeline {
            }
         }
         stage("test"){
+            when{
+                 expression{
+                      env.BRANCH_NAME == 'main'
+                 }
+            }
            steps{
               echo 'Testing the application ............'
            }
