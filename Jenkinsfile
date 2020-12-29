@@ -2,7 +2,7 @@ pipeline {
      agent any
      environment{
         NEW_VERSION == '1.3.0'
-        GITHUB_CREDENTIALS == 'credentials('githubSuri')
+        GITHUB_CREDENTIALS == credentials('githubSuri')
      }
      stages {
         stage("build"){
