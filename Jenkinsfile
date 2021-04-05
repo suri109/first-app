@@ -9,6 +9,7 @@ pipeline {
 	     //string(name: 'VERSION', defaultValue : '' , description: "Value of Version")
 	     choice(name: 'VERSION', choices: ['1.3.0', '1.4.0', '1.5.0'], description: 'choose version of value')
              booleanParam(name: 'executeTests', defaultValue: 'true' , description: '')
+	     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
 	 }
      stages {
         stage("build"){
