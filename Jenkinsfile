@@ -22,6 +22,12 @@ pipeline {
               echo 'Building the application ............'
            }
         }
+
+      stage("branchTest"){
+        steps{
+		sh(script: echo "HI")
+        }
+      }
         stage("test"){
             when{
                  expression{
