@@ -25,8 +25,10 @@ pipeline {
 
       stage("branchTest"){
         steps{
-		sh(script: echo "HI")
-        }
+		script{
+		echo bat(returnStdout: true, script: 'set')
+		}
+           }
       }
         stage("test"){
             when{
